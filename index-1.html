@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Prairie Record — Saskatchewan Politics with Chris Harris</title>
+  <meta name="description" content="Independent political commentary on Saskatchewan government, the Saskatchewan Party, NDP, and Regina Legislature — by Chris Harris." />
+  <meta property="og:title" content="The Prairie Record — Saskatchewan Politics" />
+  <meta property="og:description" content="Independent political commentary on Saskatchewan by Chris Harris." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- ============================================================
+       MONETIZATION NOTE:
+       Replace the comment blocks marked [ADSENSE] with your
+       Google AdSense <script> and <ins> tags once approved.
+       Sign up at: https://adsense.google.com
+  ================================================================ -->
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --green-deep:  #1B3A2D;
+      --green-mid:   #2E5C44;
+      --green-soft:  #4A6B58;
+      --gold:        #C8A028;
+      --gold-light:  #E8C44A;
+      --cream:       #F7F3EC;
+      --cream-dark:  #EDE7DA;
+      --earth:       #1E1208;
+      --muted:       #6B5F52;
+      --white:       #FFFFFF;
+      --border:      #D4C9B5;
+
+      --serif-display: 'Playfair Display', Georgia, serif;
+      --serif-body:    'Source Serif 4', 'Times New Roman', serif;
+      --mono:          'DM Mono', monospace;
+
+      --max-w: 1200px;
+      --col-gap: 2.5rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--earth);
+      font-family: var(--serif-body);
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── UTILITY ── */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--green-deep);
+      color: var(--gold);
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    /* ── WHEAT DIVIDER (signature element) ── */
+    .wheat-divider {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      margin: 0;
+    }
+    .wheat-divider svg { display: block; width: 100%; }
+
+    /* ── TOP TICKER ── */
+    .ticker-bar {
+      background: var(--green-deep);
+      color: var(--cream-dark);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      padding: 0.45rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      overflow: hidden;
+    }
+    .ticker-label {
+      background: var(--gold);
+      color: var(--earth);
+      font-weight: 500;
+      padding: 0.1rem 0.5rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ticker-scroll {
+      overflow: hidden;
+      flex: 1;
+    }
+    .ticker-inner {
+      display: inline-flex;
+      gap: 3rem;
+      animation: ticker 28s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .ticker-inner span::before { content: "◆  "; color: var(--gold); }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--cream);
+      border-bottom: 3px solid var(--green-deep);
+      padding: 2rem 1.5rem 0;
+      text-align: center;
+    }
+    .masthead-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .masthead-kicker {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+      margin-bottom: 0.5rem;
+    }
+    .masthead h1 {
+      font-family: var(--serif-display);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--green-deep);
+      letter-spacing: -0.02em;
+    }
+    .masthead h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .masthead-sub {
+      font-family: var(--serif-body);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      padding: 0.7rem 1.2rem;
+      border-right: 1px solid var(--border);
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav a:first-child { border-left: 1px solid var(--border); }
+    .nav a:hover { background: var(--green-deep); color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--green-deep);
+      color: var(--cream);
+      padding: 4rem 1.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(200,160,40,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: var(--col-gap);
+      align-items: center;
+    }
+    .hero-tag { margin-bottom: 1rem; }
+    .hero h2 {
+      font-family: var(--serif-display);
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+    .hero h2 em { font-style: italic; color: var(--gold); }
+    .hero-byline {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green-soft); /* muted */
+      color: #7FA990;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: #C8BDAF;
+      max-width: 54ch;
+    }
+    .hero-cta {
+      display: inline-block;
+      margin-top: 1.8rem;
+      background: var(--gold);
+      color: var(--earth);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.8rem 1.6rem;
+      transition: background 0.15s;
+    }
+    .hero-cta:hover { background: var(--gold-light); }
+    .hero-aside {
+      border-left: 1px solid rgba(255,255,255,0.1);
+      padding-left: var(--col-gap);
+    }
+    .hero-aside-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(200,160,40,0.3);
+    }
+    .hero-aside-list { list-style: none; }
+    .hero-aside-list li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .hero-aside-list li:last-child { border-bottom: none; }
+    .hero-aside-list a {
+      font-family: var(--serif-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.3;
+      transition: color 0.15s;
+    }
+    .hero-aside-list a:hover { color: var(--gold); }
+    .hero-aside-list .mini-tag {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: var(--col-gap);
+      align-items: start;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--green-deep);
+    }
+    .section-header h3 {
+      font-family: var(--serif-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green-deep);
+    }
+    .section-header .see-all {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-left: auto;
+      transition: color 0.15s;
+    }
+    .section-header .see-all:hover { color: var(--green-mid); }
+
+    /* ── ARTICLE CARDS ── */
+    .article-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    .article-card {
+      display: grid;
+      grid-template-columns: 1fr 140px;
+      gap: 1.2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-card:last-child { border-bottom: none; padding-bottom: 0; }
+    .article-card-body { order: 1; }
+    .article-card-thumb {
+      order: 2;
+      width: 140px;
+      height: 100px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .card-thumb-placeholder {
+      width: 140px;
+      height: 100px;
+      background: var(--green-deep);
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-thumb-placeholder::after {
+      content: attr(data-initials);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: rgba(200,160,40,0.3);
+      letter-spacing: -0.05em;
+    }
+    .article-card .tag { margin-bottom: 0.5rem; }
+    .article-card h4 {
+      font-family: var(--serif-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--green-deep);
+      margin-bottom: 0.4rem;
+      transition: color 0.15s;
+    }
+    .article-card h4:hover { color: var(--gold); cursor: pointer; }
+    .article-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+    .article-meta {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #9B8F82;
+    }
+    .article-meta span { color: var(--gold); }
+
+    /* ── OPINION STRIP ── */
+    .opinion-strip {
+      background: var(--green-deep);
+      padding: 3rem 1.5rem;
+    }
+    .opinion-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .opinion-inner .section-header {
+      border-color: rgba(255,255,255,0.15);
+    }
+    .opinion-inner .section-header h3 { color: var(--cream); }
+    .opinion-inner .section-header .see-all { color: var(--gold); }
+    .opinion-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--col-gap);
+    }
+    .opinion-card {
+      border-left: 3px solid var(--gold);
+      padding-left: 1.2rem;
+    }
+    .opinion-card blockquote {
+      font-family: var(--serif-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    .opinion-card .op-author {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7FA990;
+    }
+    .opinion-card p.op-desc {
+      font-size: 0.88rem;
+      color: #8FA99B;
+      margin-top: 0.5rem;
+      line-height: 1.55;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 2rem; }
+
+    .sidebar-widget {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+    .widget-title {
+      font-family: var(--serif-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--green-deep);
+    }
+
+    /* About widget */
+    .about-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--green-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif-display);
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .about-name {
+      font-family: var(--serif-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 0.3rem;
+    }
+    .about-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    /* Support widget */
+    .support-widget { background: var(--green-deep); border: none; }
+    .support-widget .widget-title { color: var(--cream); border-color: rgba(255,255,255,0.15); }
+    .support-widget p {
+      font-size: 0.85rem;
+      color: #8FA99B;
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+    }
+    .support-btn {
+      display: block;
+      text-align: center;
+      background: var(--gold);
+      color: var(--earth);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0.7rem 1rem;
+      margin-bottom: 0.6rem;
+      transition: background 0.15s;
+    }
+    .support-btn:hover { background: var(--gold-light); }
+    .support-btn.secondary {
+      background: transparent;
+      border: 1px solid rgba(200,160,40,0.4);
+      color: var(--gold);
+    }
+    .support-btn.secondary:hover { border-color: var(--gold); background: rgba(200,160,40,0.08); }
+
+    /* Newsletter widget */
+    .nl-form { display: flex; flex-direction: column; gap: 0.6rem; }
+    .nl-input {
+      font-family: var(--serif-body);
+      font-size: 0.9rem;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border);
+      background: var(--cream);
+      color: var(--earth);
+      width: 100%;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-input:focus { border-color: var(--green-mid); }
+    .nl-btn {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--green-deep);
+      color: var(--gold);
+      border: none;
+      padding: 0.7rem;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .nl-btn:hover { background: var(--green-mid); }
+    .nl-note {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Categories */
+    .cat-list { list-style: none; display: flex; flex-direction: column; gap: 0.1rem; }
+    .cat-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .cat-list li:last-child { border-bottom: none; }
+    .cat-list a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      transition: color 0.15s;
+    }
+    .cat-list a:hover { color: var(--gold); }
+    .cat-count {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--muted);
+      background: var(--cream-dark);
+      padding: 0.15rem 0.45rem;
+    }
+
+    /* Ad placeholder */
+    .ad-placeholder {
+      border: 1px dashed var(--border);
+      padding: 1rem;
+      text-align: center;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream-dark);
+    }
+    .ad-placeholder p {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .ad-placeholder .ad-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.3;
+    }
+
+    /* ── DATA BLOCK ── */
+    .data-section {
+      background: var(--cream-dark);
+      padding: 3rem 1.5rem;
+      border-top: 2px solid var(--green-deep);
+      border-bottom: 2px solid var(--green-deep);
+    }
+    .data-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .data-card {
+      background: var(--white);
+      padding: 1.5rem;
+      border-bottom: 3px solid var(--gold);
+    }
+    .data-card .data-num {
+      font-family: var(--serif-display);
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--green-deep);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .data-card .data-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .data-card .data-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── LEADERBOARD AD ── */
+    .leaderboard-ad {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+      background: var(--cream-dark);
+      text-align: center;
+    }
+    .leaderboard-ad-inner {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--earth);
+      color: var(--cream);
+      padding: 3rem 1.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: var(--col-gap);
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .footer-brand h2 {
+      font-family: var(--serif-display);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--cream);
+    }
+    .footer-brand h2 em { color: var(--gold); font-style: italic; }
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: #7A6E63;
+      margin-top: 0.6rem;
+      line-height: 1.6;
+      max-width: 36ch;
+    }
+    .footer-col h4 {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul a {
+      font-size: 0.88rem;
+      color: #7A6E63;
+      transition: color 0.15s;
+    }
+    .footer-col ul a:hover { color: var(--cream); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-bottom p {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: #4A4035;
+    }
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+    .footer-social a {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4A4035;
+      transition: color 0.15s;
+    }
+    .footer-social a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-aside { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-left: 0; padding-top: 1.5rem; margin-top: 1.5rem; }
+      .main-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: contents; }
+      .sidebar > *:nth-child(1) { order: 2; }
+      .sidebar > *:nth-child(2) { order: 3; }
+      .opinion-grid { grid-template-columns: 1fr; }
+      .data-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .article-card { grid-template-columns: 1fr; }
+      .card-thumb-placeholder { width: 100%; height: 160px; }
+    }
+
+    @media (max-width: 600px) {
+      .data-grid { grid-template-columns: 1fr 1fr; }
+      .masthead h1 { font-size: 2.4rem; }
+      .nav a { padding: 0.6rem 0.8rem; font-size: 0.62rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-inner { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar" role="complementary" aria-label="News ticker">
+  <span class="ticker-label">PRAIRIE RECORD</span>
+  <div class="ticker-scroll" aria-hidden="true">
+    <div class="ticker-inner">
+      <span>Legislature sitting resumes this fall</span>
+      <span>Saskatchewan GDP growth edges past national average</span>
+      <span>Budget debate heats up in Regina</span>
+      <span>Rural municipalities push back on infrastructure funding cuts</span>
+      <span>NDP leadership eyes 2026 provincial election strategy</span>
+      <span>Carbon pricing showdown returns to courts</span>
+      <!-- duplicate for seamless loop -->
+      <span>Legislature sitting resumes this fall</span>
+      <span>Saskatchewan GDP growth edges past national average</span>
+      <span>Budget debate heats up in Regina</span>
+      <span>Rural municipalities push back on infrastructure funding cuts</span>
+      <span>NDP leadership eyes 2026 provincial election strategy</span>
+      <span>Carbon pricing showdown returns to courts</span>
+    </div>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="masthead-kicker">Saskatchewan Political Commentary</p>
+    <h1>The Prairie <em>Record</em></h1>
+    <p class="masthead-sub">Independent analysis from Regina to the North — by Chris Harris</p>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#latest">Latest</a>
+      <a href="#legislature">Legislature</a>
+      <a href="#economy">Economy</a>
+      <a href="#rural">Rural &amp; North</a>
+      <a href="#opinion">Opinion</a>
+      <a href="#data">By the Numbers</a>
+      <a href="#about">About Chris</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-inner">
+    <div class="hero-main">
+      <div class="hero-tag">
+        <span class="tag">Feature</span>
+      </div>
+      <h2 id="hero-heading">The Saskatchewan Party's <em>Decade in Power:</em> What the Record Actually Shows</h2>
+      <p class="hero-byline">By Chris Harris &nbsp;·&nbsp; June 16, 2026 &nbsp;·&nbsp; 12 min read</p>
+      <p>Three premiers, four majority governments, and two decades of commodity swings. The Sask Party has governed this province longer than any administration since the CCF. I've spent six weeks going through the budget documents, rural infrastructure assessments, and legislative voting records so you don't have to.</p>
+      <a href="#" class="hero-cta">Read the Full Analysis →</a>
+    </div>
+    <aside class="hero-aside" aria-label="Latest stories">
+      <p class="hero-aside-label">Also This Week</p>
+      <ul class="hero-aside-list">
+        <li>
+          <span class="mini-tag">Economy</span>
+          <a href="#">Potash royalties: is Saskatchewan leaving money on the table?</a>
+        </li>
+        <li>
+          <span class="mini-tag">Legislature</span>
+          <a href="#">Bill 40 and what it means for municipal autonomy</a>
+        </li>
+        <li>
+          <span class="mini-tag">Rural</span>
+          <a href="#">Hospital closures and the politics of silence in the North</a>
+        </li>
+        <li>
+          <span class="mini-tag">Opinion</span>
+          <a href="#">Why the province's fiscal anchor is a fiction</a>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- WHEAT DIVIDER -->
+<div class="wheat-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1440" height="48" fill="#1B3A2D"/>
+    <!-- Prairie horizon silhouette with stylised wheat stalks -->
+    <path d="M0 48 L0 30 Q60 24 80 30 Q100 36 120 30 Q140 24 160 28 Q180 32 200 28 Q240 22 260 28 Q280 34 300 28 Q340 20 360 26 Q380 32 400 26 Q440 18 460 24 Q480 30 500 24 Q540 16 560 22 Q580 28 600 22 Q640 14 660 20 Q680 26 700 20 Q740 12 760 18 Q780 24 800 18 Q840 10 860 16 Q880 22 900 16 Q940 8 960 14 Q980 20 1000 14 Q1040 6 1060 12 Q1080 18 1100 12 Q1140 4 1160 10 Q1180 16 1200 10 Q1240 2 1260 8 Q1280 14 1300 8 Q1340 0 1360 6 Q1380 12 1400 6 L1440 0 L1440 48 Z" fill="#F7F3EC"/>
+    <!-- Wheat stalk details -->
+    <line x1="200" y1="48" x2="200" y2="20" stroke="#C8A028" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="200" cy="18" rx="3" ry="6" fill="#C8A028" opacity="0.5"/>
+    <line x1="400" y1="48" x2="400" y2="16" stroke="#C8A028" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="400" cy="14" rx="3" ry="6" fill="#C8A028" opacity="0.5"/>
+    <line x1="600" y1="48" x2="600" y2="12" stroke="#C8A028" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="600" cy="10" rx="3" ry="6" fill="#C8A028" opacity="0.5"/>
+    <line x1="800" y1="48" x2="800" y2="8" stroke="#C8A028" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="800" cy="6" rx="3" ry="6" fill="#C8A028" opacity="0.5"/>
+    <line x1="1000" y1="48" x2="1000" y2="4" stroke="#C8A028" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="1000" cy="2" rx="3" ry="6" fill="#C8A028" opacity="0.5"/>
+    <line x1="1200" y1="48" x2="1200" y2="4" stroke="#C8A028" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="1200" cy="2" rx="3" ry="6" fill="#C8A028" opacity="0.5"/>
+  </svg>
+</div>
+
+<!-- LEADERBOARD AD (top) -->
+<div class="leaderboard-ad">
+  <div class="leaderboard-ad-inner">
+    <p>Advertisement · 728×90</p>
+    <p style="margin-top:0.3rem;font-size:0.55rem;">Replace this block with your Google AdSense leaderboard tag</p>
+    <!-- [ADSENSE LEADERBOARD] Paste your <ins class="adsbygoogle"> tag here -->
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main id="latest">
+  <div class="main-wrap">
+
+    <!-- ARTICLE FEED -->
+    <div>
+      <div class="section-header">
+        <h3>Latest Analysis</h3>
+        <a href="#" class="see-all">All articles →</a>
+      </div>
+
+      <div class="article-grid">
+
+        <!-- Article 1 -->
+        <article class="article-card" id="legislature">
+          <div class="article-card-body">
+            <span class="tag">Legislature</span>
+            <h4>Bill 40 and the Quiet Erosion of Municipal Autonomy in Saskatchewan</h4>
+            <p>The government's latest legislation gives cabinet sweeping new powers to override municipal zoning decisions — and the debate over it has barely made a ripple outside Regina. Here's why it matters.</p>
+            <p class="article-meta">June 12, 2026 &nbsp;·&nbsp; <span>8 min read</span></p>
+          </div>
+          <div class="card-thumb-placeholder" data-initials="SK"></div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="article-card" id="economy">
+          <div class="article-card-body">
+            <span class="tag">Economy</span>
+            <h4>Potash Royalties: Is Saskatchewan Getting Its Fair Share?</h4>
+            <p>With global potash prices recovering and two new mines in the pipeline, the province's royalty structure hasn't been meaningfully revised since 2012. I ran the numbers against Norway's sovereign resource model.</p>
+            <p class="article-meta">June 9, 2026 &nbsp;·&nbsp; <span>11 min read</span></p>
+          </div>
+          <div class="card-thumb-placeholder" data-initials="$$"></div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="article-card" id="rural">
+          <div class="article-card-body">
+            <span class="tag">Rural &amp; North</span>
+            <h4>The Slow Disappearance of Northern Saskatchewan Health Services</h4>
+            <p>Three hospitals reduced to urgent-care only in four years. Seven physician positions unfilled in La Ronge alone. A look at the data behind the province's healthcare map — and the communities left without coverage.</p>
+            <p class="article-meta">June 5, 2026 &nbsp;·&nbsp; <span>9 min read</span></p>
+          </div>
+          <div class="card-thumb-placeholder" data-initials="NH"></div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="article-card">
+          <div class="article-card-body">
+            <span class="tag">Federal–Provincial</span>
+            <h4>Carbon Pricing, Again: Why Saskatchewan Keeps Losing in Court and Keeps Fighting Anyway</h4>
+            <p>After three Supreme Court decisions, the province's carbon-tax resistance has cost taxpayers more in legal fees than any projected savings from exemptions. So what's the actual political strategy here?</p>
+            <p class="article-meta">May 30, 2026 &nbsp;·&nbsp; <span>7 min read</span></p>
+          </div>
+          <div class="card-thumb-placeholder" data-initials="CO"></div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="article-card">
+          <div class="article-card-body">
+            <span class="tag">NDP Watch</span>
+            <h4>Can the Saskatchewan NDP Build a Coalition That Actually Wins?</h4>
+            <p>The opposition has held Regina North Albert for three terms but hasn't cracked rural Saskatchewan since 2007. An honest look at the structural barriers — and whether this leadership is doing anything differently.</p>
+            <p class="article-meta">May 24, 2026 &nbsp;·&nbsp; <span>10 min read</span></p>
+          </div>
+          <div class="card-thumb-placeholder" data-initials="ND"></div>
+        </article>
+
+      </div><!-- /article-grid -->
+    </div><!-- /feed column -->
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Sidebar">
+
+      <!-- About -->
+      <div class="sidebar-widget" id="about">
+        <p class="widget-title">About Chris Harris</p>
+        <div class="about-avatar">CH</div>
+        <p class="about-name">Chris Harris</p>
+        <p class="about-text">Independent political writer covering Saskatchewan government, the Legislature, and the issues that shape life in this province. Based in Regina. No party affiliation. No paywalls on the analysis.</p>
+        <a href="#" class="support-btn" style="display:block;text-align:center;background:var(--green-deep);color:var(--gold);font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.7rem;margin-top:0.5rem;">Follow on X / Twitter →</a>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="sidebar-widget">
+        <p class="widget-title">Get the Weekly Dispatch</p>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;line-height:1.6;">One email every Sunday. Saskatchewan politics distilled to what actually matters — no noise.</p>
+        <div class="nl-form">
+          <input class="nl-input" type="email" placeholder="your@email.com" aria-label="Email address" />
+          <button class="nl-btn" type="button">Subscribe Free →</button>
+          <p class="nl-note">No spam. Unsubscribe anytime.</p>
+        </div>
+        <!-- 
+          MONETIZATION TIP: Connect this form to Mailchimp, ConvertKit, or Substack.
+          All offer free tiers. Substack also lets you charge for premium editions.
+          Recommended: https://substack.com — free setup, built-in paid subscriptions.
+        -->
+      </div>
+
+      <!-- Support -->
+      <div class="sidebar-widget support-widget">
+        <p class="widget-title">Support Independent Coverage</p>
+        <p>Saskatchewan deserves serious political journalism. If this work is useful to you, consider helping keep it going.</p>
+        <a href="https://ko-fi.com" target="_blank" rel="noopener noreferrer" class="support-btn">☕ Buy Me a Coffee</a>
+        <a href="https://www.patreon.com" target="_blank" rel="noopener noreferrer" class="support-btn secondary">Become a Patron →</a>
+        <!--
+          MONETIZATION: Replace the links above with your actual Ko-fi / Patreon URLs.
+          Ko-fi: https://ko-fi.com  (free to set up, takes 0% commission on donations)
+          Patreon: https://patreon.com (memberships with perks)
+        -->
+      </div>
+
+      <!-- Categories -->
+      <div class="sidebar-widget">
+        <p class="widget-title">Topics</p>
+        <ul class="cat-list">
+          <li><a href="#">Legislature &amp; Policy</a><span class="cat-count">24</span></li>
+          <li><a href="#">Economy &amp; Resources</a><span class="cat-count">18</span></li>
+          <li><a href="#">Rural &amp; Northern SK</a><span class="cat-count">15</span></li>
+          <li><a href="#">Federal–Provincial</a><span class="cat-count">12</span></li>
+          <li><a href="#">Saskatchewan Party</a><span class="cat-count">21</span></li>
+          <li><a href="#">NDP Watch</a><span class="cat-count">16</span></li>
+          <li><a href="#">Opinion</a><span class="cat-count">9</span></li>
+          <li><a href="#">Budget &amp; Fiscal</a><span class="cat-count">11</span></li>
+        </ul>
+      </div>
+
+      <!-- Sidebar Ad -->
+      <div class="ad-placeholder" aria-label="Advertisement">
+        <div class="ad-icon">📰</div>
+        <p>Advertisement</p>
+        <p style="margin-top:0.4rem;font-size:0.55rem;">300×250 sidebar ad</p>
+        <p style="margin-top:0.2rem;font-size:0.5rem;">Replace with Google AdSense 300×250 tag</p>
+        <!-- [ADSENSE SIDEBAR] Paste your <ins class="adsbygoogle"> 300x250 tag here -->
+      </div>
+
+    </aside>
+
+  </div><!-- /main-wrap -->
+</main>
+
+<!-- DATA SECTION -->
+<section class="data-section" id="data" aria-labelledby="data-heading">
+  <div class="data-inner">
+    <div class="section-header">
+      <h3 id="data-heading">Saskatchewan by the Numbers</h3>
+      <a href="#" class="see-all">Full data archive →</a>
+    </div>
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="data-num">28</div>
+        <div class="data-label">Sask Party MLAs</div>
+        <p class="data-note">Current legislature seat count following 2024 provincial election results.</p>
+      </div>
+      <div class="data-card">
+        <div class="data-num">14</div>
+        <div class="data-label">NDP MLAs</div>
+        <p class="data-note">Opposition strength — up 3 seats from 2020, still well short of government.</p>
+      </div>
+      <div class="data-card">
+        <div class="data-num">$1.2B</div>
+        <div class="data-label">2025–26 Surplus</div>
+        <p class="data-note">Forecast budget surplus, driven by potash and oil royalties, per Budget 2025.</p>
+      </div>
+      <div class="data-card">
+        <div class="data-num">18</div>
+        <div class="data-label">Years in Power</div>
+        <p class="data-note">Saskatchewan Party has governed since November 2007 — one of the longest unbroken runs in Canada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPINION STRIP -->
+<section class="opinion-strip" id="opinion" aria-labelledby="opinion-heading">
+  <div class="opinion-inner">
+    <div class="section-header">
+      <h3 id="opinion-heading">From the Column</h3>
+      <a href="#" class="see-all">All opinion →</a>
+    </div>
+    <div class="opinion-grid">
+      <div class="opinion-card">
+        <blockquote>"The fiscal anchor was supposed to constrain spending. Instead it's become a prop."</blockquote>
+        <p class="op-author">Chris Harris · May 2026</p>
+        <p class="op-desc">On the government's debt-reduction framework — and why the numbers don't add up the way ministers claim they do.</p>
+      </div>
+      <div class="opinion-card">
+        <blockquote>"Rural Saskatchewan is voting against its own economic interest — and I think I know why."</blockquote>
+        <p class="op-author">Chris Harris · April 2026</p>
+        <p class="op-desc">A candid look at how identity politics and distrust of the NDP keep rural voters loyal to a government cutting their services.</p>
+      </div>
+      <div class="opinion-card">
+        <blockquote>"The province needs a genuine press gallery — not just wire services passing through Regina."</blockquote>
+        <p class="op-author">Chris Harris · March 2026</p>
+        <p class="op-desc">Why the decline of the Saskatchewan press gallery is a democracy problem, not just a media industry problem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER WHEAT DIVIDER -->
+<div class="wheat-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1440" height="40" fill="#1E1208"/>
+    <path d="M0 0 Q120 20 240 10 Q360 0 480 15 Q600 30 720 15 Q840 0 960 12 Q1080 24 1200 12 Q1320 0 1440 10 L1440 0 Z" fill="#F7F3EC"/>
+  </svg>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2>The Prairie <em>Record</em></h2>
+        <p>Independent political coverage of Saskatchewan — the Legislature, the economy, and the communities in between. Written and edited by Chris Harris in Regina.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="#">Legislature</a></li>
+          <li><a href="#">Economy</a></li>
+          <li><a href="#">Rural &amp; North</a></li>
+          <li><a href="#">Federal Relations</a></li>
+          <li><a href="#">Opinion</a></li>
+          <li><a href="#">Data</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#">About Chris Harris</a></li>
+          <li><a href="#">Newsletter Archive</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">RSS Feed</a></li>
+          <!--
+            MONETIZATION: Add a "Become a Supporter" or "Subscribe" link here
+            once your Substack / Patreon / Ko-fi is live.
+          -->
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Chris Harris — The Prairie Record. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#">Twitter / X</a>
+        <a href="#">Bluesky</a>
+        <a href="#">RSS</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
